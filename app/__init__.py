@@ -8,8 +8,8 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# from app.models import actor, movie
-# from app.routes import index, actors, movies
+from app.models import actor, movie
+from app.routes import index, actors, movies
 
 # Error Handling
 @app.errorhandler(422)
