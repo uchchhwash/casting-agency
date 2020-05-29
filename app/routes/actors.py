@@ -22,11 +22,8 @@ def get_actors(payload):
 @app.route('/actors', methods=['POST'])
 @requires_auth('post:actors')
 def add_actor(payload):
-    """Handles POST requests for actors.
-    returns:
-        - actor object
-        - success message
-    """
+    print(" iam here")
+
     body = request.get_json()
     new_actor = Actor(
         name=body.get('name'),
