@@ -18,3 +18,4 @@ typed-ast
 Werkzeug
 wrapt
 Flask-Cors
+flask_migrate
