@@ -1,8 +1,7 @@
 from flask import jsonify, request
 from app import app
 from app.models.actor import Actor
-from app.auth import requires_auth
-
+from app.auth.auth import requires_auth
 
 @app.route('/actors')
 @requires_auth('get:actors')
