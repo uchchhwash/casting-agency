@@ -9,7 +9,7 @@ class Movie(Base, ModelHelpers):
     __tablename__ = 'movies'
 
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(120))
+    title = db.Column(db.String(120), unique=True)
     desc = db.Column(db.String(250))
     release_date = db.Column(db.String(120))
     actors = db.relationship('Actor', backref='movies', lazy=True)

@@ -40,3 +40,41 @@ def add_movie(payload):
         'movie': new_movie.to_json(),
         'success': True
     }), 201
+
+@app.route('/movies/<int:id>', methods=['PATCH'])
+@requires_auth('patch:movies')
+def update_movie(id):
+    """Handles UPDATE requests for movies.
+    returns:
+        - movie object
+        - success message
+    """
+    movie = Movie.query.filter_by(id=id).first()
+    if not movie:
+        return jsonify({'message': 'Movie not found.'})
+    body = request.get_json()
+    movie.title = body.get('title', movie.title)
+    movie.desc = body.get('desc', movie.desc)
+    movie.release_date = body.get('release_date', movie.release_date)
+    movie.update()
+    return jsonify({
+        'movie': movie.to_json(),
+        'success': True
+    }), 200
+
+
+@app.route('/movies/<int:id>', methods=['DELETE'])
+@requires_auth('delete:movies')
+def delete_movies(id):
+    """Handles DELETE requests for movies.
+    returns:
+        - success message
+    """
+    movie = Movie.query.filter_by(id=id).first()
+    if not movie:
+        return jsonify({'message': 'Movie not found.'})
+    movie.delete()
+    return jsonify({
+        'message': 'Movie Successfully deleted.',
+        'success': True,
+    }), 200
