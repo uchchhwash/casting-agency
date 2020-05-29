@@ -19,3 +19,4 @@ Werkzeug
 wrapt
 Flask-Cors
 flask_migrate
+python-dotenv
