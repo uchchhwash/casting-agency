@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 from flask import Flask, jsonify
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
