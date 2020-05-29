@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from .auth.auth import AuthError
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -12,6 +13,16 @@ from app.models import actor, movie
 from app.routes import index, actors, movies
 
 # Error Handling
+
+@app.errorhandler(AuthError)
+def auth_error(error):
+    return jsonify({
+        "success": False,
+        "error": error.status_code,
+        "message": error.error['description']
+    }), error.status_code 
+
+
 @app.errorhandler(422)
 def unprocessable(error):
     return jsonify({

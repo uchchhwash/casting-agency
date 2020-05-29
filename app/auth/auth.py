@@ -1,4 +1,3 @@
-  
 import json
 from flask import request, _request_ctx_stack, abort
 from functools import wraps
@@ -48,6 +47,8 @@ def get_token_auth_header():
 
 # Funtion to check permissions of request
 def check_permissions(permission, payload):
+    print(permission)
+    print(payload)
     if 'permissions' not in payload:
         abort(400)
 
@@ -138,6 +139,7 @@ def requires_auth(permission=''):
             token = get_token_auth_header()
             payload = verify_decode_jwt(token)
             check_permissions(permission, payload)
+            print(check_permissions(permission, payload))
             return f(payload, *args, **kwargs)
 
         return wrapper

@@ -1,9 +1,10 @@
-from flask import jsonify, request
+from flask import jsonify, request, abort
 from app import app
 from app.models.actor import Actor
+from app.models.movie import Movie
 from app.auth.auth import requires_auth
 
-@app.route('/actors')
+@app.route('/actors', methods=['GET'])
 @requires_auth('get:actors')
 def get_actors(payload):
     """Handles GET requests for actors.
@@ -22,9 +23,11 @@ def get_actors(payload):
 @app.route('/actors', methods=['POST'])
 @requires_auth('post:actors')
 def add_actor(payload):
-    print(" iam here")
 
     body = request.get_json()
+    movie = Movie.query.filter_by(id=body.get('movie')).one_or_none()
+    if not movie:
+        return jsonify({'message': 'Movie not found in database.'}),422
     new_actor = Actor(
         name=body.get('name'),
         bio=body.get('bio'),
@@ -38,7 +41,7 @@ def add_actor(payload):
         'success': True
     }), 201
 
-    @app.route('/actors/<int:id>', methods=['PATCH'])
+@app.route('/actors/<int:id>', methods=['PATCH'])
 @requires_auth('patch:actors')
 def update_actor(payload, id):
     """Handles UPDATE requests for actors.
