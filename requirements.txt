@@ -9,8 +9,7 @@ itsdangerous
 lazy-object-proxy
 MarkupSafe
 mccabe
-pycryptodome
-pylint
+pycryptodome==3.3.1
 python-jose-cryptodome
 six
 SQLAlchemy
