@@ -37,3 +37,42 @@ def add_actor(payload):
         'actor': new_actor.to_json(),
         'success': True
     }), 201
+
+    @app.route('/actors/<int:id>', methods=['PATCH'])
+@requires_auth('patch:actors')
+def update_actor(payload, id):
+    """Handles UPDATE requests for actors.
+    returns:
+        - actor object
+        - success message
+    """
+    actor = Actor.query.filter_by(id=id).first()
+    if not actor:
+        return jsonify({'message': 'Actor not found.'})
+    body = request.get_json()
+    actor.name = body.get('name', actor.name)
+    actor.bio = body.get('bio', actor.bio)
+    actor.age = body.get('age', actor.age)
+    actor.gender = body.get('gender', actor.gender)
+    actor.update()
+    return jsonify({
+        'actor': actor.to_json(),
+        'success': True
+    }), 200
+
+
+@app.route('/actors/<int:id>', methods=['DELETE'])
+@requires_auth('delete:actors')
+def delete_actor(payload, id):
+    """Handles DELETE requests for actors.
+    returns:
+        - success message
+    """
+    actor = Actor.query.filter_by(id=id).first()
+    if not actor:
+        return jsonify({'message': 'Actor not found.'})
+    actor.delete()
+    return jsonify({
+        'message': 'Actor Successfully deleted.',
+        'success': True,
+    }), 200
