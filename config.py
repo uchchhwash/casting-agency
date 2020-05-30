@@ -1,8 +1,7 @@
 import os
-# basedir = os.path.abspath(os.path.dirname(__file__))
+project_dir = os.path.abspath(os.path.dirname(__file__))
 database_filename = "database.db"
-project_dir = os.path.dirname(os.path.abspath(__file__))
-project_dir = project_dir + "\\app\\"
+#project_dir = project_dir + "\\app\\" #for windows
 database_path = "sqlite:///{}".format(os.path.join(project_dir, database_filename))
 
 class Config(object):
