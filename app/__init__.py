@@ -9,7 +9,7 @@ from .auth.auth import AuthError
 app = Flask(__name__)
 
 #DEVELOPMENT MODE FALSE INTIALIZE PRODUCTION & TRUE INTIALIZE LOCAL DATABASE 
-if DEVELOPMENT_MODE == 'FALSE':
+if DEVELOPMENT_MODE.lower() == 'false':
     app.config.from_object(Config)
     print("activated production database")
 else :
