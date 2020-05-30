@@ -1,25 +1,24 @@
-import os, json
+import os
+import json
 from flask import request, _request_ctx_stack, abort
 from functools import wraps
 from jose import jwt
 from urllib.request import urlopen
 
-#AUTH0 Configs
+# AUTH0 CONFIGARATIONS
 AUTH0_DOMAIN = os.environ.get('AUTH0_DOMAIN')
 ALGORITHMS = os.environ.get('ALGORITHMS')
 API_AUDIENCE = os.environ.get('API_AUDIENCE')
 
-# AuthError Exception
 
-
+# AUTHERROR EXCEPTION
 class AuthError(Exception):
     def __init__(self, error, status_code):
         self.error = error
         self.status_code = status_code
 
 
-# Auth Header
-
+# AUTH HEADER
 def get_token_auth_header():
 
     auth_header = request.headers.get("Authorization", None)
@@ -45,7 +44,7 @@ def get_token_auth_header():
     return header_parts[1]
 
 
-# Funtion to check permissions of request
+# FUNCTION TO CHECK PERMISSION OF REQUEST
 def check_permissions(permission, payload):
     if 'permissions' not in payload:
         abort(400)
@@ -59,16 +58,16 @@ def check_permissions(permission, payload):
     return True
 
 
-# Function for verifying Auth0 Token
+# FUNCTION FOR VERIFYING AUTH0 TOKEN
 def verify_decode_jwt(token):
-    # Get public key from Auth0
+    # GET A PUBLIC KEY FORM AUTH 0
     jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
     jwks = json.loads(jsonurl.read())
 
-    # Get the data in the header
+    # GET THE DATA IN HEADER
     unverified_header = jwt.get_unverified_header(token)
 
-    # Auth0 token should have a key id
+    # AUTH0 TOKEN SHOULD HAVE A ID KEY
     if 'kid' not in unverified_header:
         raise AuthError({
             'code': 'invalid_header',
@@ -88,10 +87,10 @@ def verify_decode_jwt(token):
             }
             break
 
-    # verify the token
+    # VERIFY THE TOKEN
     if rsa_key:
         try:
-            # Validate the token using the rsa_key
+            # VALIDATE THE TOKEN USING RSA KEY
             payload = jwt.decode(
                 token,
                 rsa_key,
@@ -129,7 +128,7 @@ def verify_decode_jwt(token):
     }, 400)
 
 
-# Require Funtions with Auth decorator
+# REQUIRE FUCNTIONS WITH AUTH0 DECORATOR
 def requires_auth(permission=''):
     def requires_auth_decorator(f):
         @wraps(f)
