@@ -34,6 +34,5 @@ class Actor(Base, ModelHelpers):
             'updated_on': self.updated_on
         }
 
-
     def __repr__(self):
         return f'<Actor {self.name}>'
