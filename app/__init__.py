@@ -11,10 +11,10 @@ app = Flask(__name__)
 #DEVELOPMENT MODE FALSE INTIALIZE PRODUCTION & TRUE INTIALIZE LOCAL DATABASE 
 if DEVELOPMENT_MODE.lower() == 'false':
     app.config.from_object(Config)
-    print("activated production database")
+    print("Production Database Activated")
 else :
     app.config.from_object(Test_Config)
-    print("activated local database")
+    print("Local Database Activated")
 
 
 db = SQLAlchemy(app)
