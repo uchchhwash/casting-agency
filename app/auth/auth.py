@@ -27,7 +27,7 @@ def get_token_auth_header():
     if not auth_header:
         raise AuthError({
             "code": "authorization_header_missing",
-            "description": "Authorization header is expexted"}, 401)
+            "description": "Authorization header is expected"}, 401)
 
     header_parts = auth_header.split(' ')
 
