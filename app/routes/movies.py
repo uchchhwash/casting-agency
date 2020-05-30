@@ -30,6 +30,11 @@ def add_movie(payload):
         - success message
     """
     body = request.get_json()
+    similar_movie_flag = Movie.query.filter(Movie.title == body.get('title')).one_or_none()
+    if similar_movie_flag is not None:
+        return jsonify({
+            'message': 'Similar Movie Title Already Exist in Database.'
+        }),422
     new_movie = Movie(
         title=body.get('title'),
         desc=body.get('desc'),

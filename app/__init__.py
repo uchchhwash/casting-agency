@@ -12,15 +12,19 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 
+
 # Drop DB and Creat DB
-# def db_drop_and_create_all():
-#     db.drop_all()
-#     db.create_all()
-    
+def db_drop_and_create_all():
+    db.drop_all()
+    db.create_all()
+
+
 from app.models import actor, movie
 from app.routes import index, actors, movies
 
 # Error Handling
+
+# db_drop_and_create_all()
 
 @app.errorhandler(AuthError)
 def auth_error(error):
