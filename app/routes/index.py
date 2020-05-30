@@ -2,14 +2,10 @@ from flask import jsonify, abort
 from app import app
 
 
+# INDEX ROUTE TO CHECK API STATUS
 @app.route('/')
 def index():
-    """Handles GET requests for sample ping.
-    This is used to test whether the app is set up well.
-    returns:
-        - success message
-    """
     return jsonify({
-        'message': 'Udacity capstone project.',
+        'message': 'Welcome To The Casting-Agency-API',
         'success': True
     })
