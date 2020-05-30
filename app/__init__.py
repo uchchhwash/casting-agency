@@ -11,6 +11,12 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+
+# Drop DB and Creat DB
+# def db_drop_and_create_all():
+#     db.drop_all()
+#     db.create_all()
+    
 from app.models import actor, movie
 from app.routes import index, actors, movies
 
