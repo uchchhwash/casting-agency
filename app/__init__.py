@@ -23,7 +23,7 @@ migrate = Migrate(app, db)
 
 # Drop DB and Creat DB
 def db_drop_and_create_all():
-    #db.drop_all()
+    db.drop_all()
     db.create_all()
 
 
