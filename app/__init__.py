@@ -1,24 +1,26 @@
-from dotenv import load_dotenv
-load_dotenv()
 from flask import Flask, jsonify
-from config import Config, Test_Config, TEST_MODE
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from .auth.auth import AuthError
+from config import Config, Test_Config, TEST_MODE
+
 
 app = Flask(__name__)
 
-#DEVELOPMENT MODE FALSE INTIALIZE PRODUCTION & TRUE INTIALIZE LOCAL DATABASE 
+# DEVELOPMENT MODE FALSE INTIALIZE PRODUCTION & TRUE INTIALIZE LOCAL DATABASE
 if TEST_MODE.lower() == 'false':
     app.config.from_object(Config)
     print("Production Database Activated")
-else :
+else:
     app.config.from_object(Test_Config)
     print("Local Database Activated")
 
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
+
+from app.models import actor, movie
+from app.routes import index, actors, movies
 
 
 # Drop DB and Creat DB
@@ -27,12 +29,10 @@ def db_drop_and_create_all():
     db.create_all()
 
 
-from app.models import actor, movie
-from app.routes import index, actors, movies
+# This will Drop Database & Create again
 
-# Error Handling
+db_drop_and_create_all()
 
-# db_drop_and_create_all()
 
 @app.errorhandler(AuthError)
 def auth_error(error):
@@ -40,7 +40,7 @@ def auth_error(error):
         "success": False,
         "error": error.status_code,
         "message": error.error['description']
-    }), error.status_code 
+    }), error.status_code
 
 
 @app.errorhandler(422)

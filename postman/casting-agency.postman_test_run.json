@@ -1,7 +1,7 @@
 {
-	"id": "ab1ab2cf-1c7d-47df-921a-ed6e13d87442",
+	"id": "f1bf9947-91cc-4fce-b0d0-cd325b94418b",
 	"name": "casting-agency",
-	"timestamp": "2020-05-31T00:53:41.179Z",
+	"timestamp": "2020-05-31T03:23:10.008Z",
 	"collection_id": "5eb92a9d-91be-4906-9416-3af6dd2deb1f",
 	"folder_id": 0,
 	"environment_id": "759bf4a5-dd8a-4646-b951-fef93e7fc56c",
@@ -12,7 +12,7 @@
 			"id": "9149c9e4-a143-4064-a1c9-f0c266dd4d72",
 			"name": "post-movies",
 			"url": "http://127.0.0.1:5000/movies",
-			"time": 1232,
+			"time": 1456,
 			"responseCode": {
 				"code": 201,
 				"name": "CREATED"
@@ -27,7 +27,7 @@
 				}
 			},
 			"times": [
-				1232
+				1456
 			],
 			"allTests": [
 				{
@@ -39,7 +39,7 @@
 			"id": "fd2c221d-fb40-43c3-a0eb-e9048f1a6643",
 			"name": "post-2nd movies",
 			"url": "http://127.0.0.1:5000/movies",
-			"time": 1223,
+			"time": 1329,
 			"responseCode": {
 				"code": 201,
 				"name": "CREATED"
@@ -54,7 +54,7 @@
 				}
 			},
 			"times": [
-				1223
+				1329
 			],
 			"allTests": [
 				{
@@ -66,7 +66,7 @@
 			"id": "e43a758e-2c46-43be-ba7f-52ae102f664f",
 			"name": "post-actors",
 			"url": "http://127.0.0.1:5000/actors",
-			"time": 1174,
+			"time": 1342,
 			"responseCode": {
 				"code": 201,
 				"name": "CREATED"
@@ -81,7 +81,7 @@
 				}
 			},
 			"times": [
-				1174
+				1342
 			],
 			"allTests": [
 				{
@@ -93,7 +93,7 @@
 			"id": "9b44eb5d-59b5-43e3-8570-d876db2abb9a",
 			"name": "get-actors",
 			"url": "http://127.0.0.1:5000/actors",
-			"time": 1162,
+			"time": 1333,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -113,7 +113,7 @@
 				}
 			},
 			"times": [
-				1162
+				1333
 			],
 			"allTests": [
 				{
@@ -126,7 +126,7 @@
 			"id": "ec01f108-4eda-4310-9f8d-66be1972a92d",
 			"name": "get-movies",
 			"url": "http://127.0.0.1:5000/movies",
-			"time": 1140,
+			"time": 1322,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -146,7 +146,7 @@
 				}
 			},
 			"times": [
-				1140
+				1322
 			],
 			"allTests": [
 				{
@@ -159,7 +159,7 @@
 			"id": "0c930306-2bfb-4d7d-b5bf-b027879d7f16",
 			"name": "patch-actors",
 			"url": "http://127.0.0.1:5000/actors/1",
-			"time": 1153,
+			"time": 1326,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -174,7 +174,7 @@
 				}
 			},
 			"times": [
-				1153
+				1326
 			],
 			"allTests": [
 				{
@@ -186,7 +186,7 @@
 			"id": "382eb099-fe8a-441c-8ace-4d5f9ee8a38f",
 			"name": "patch-movies",
 			"url": "http://127.0.0.1:5000/movies/1",
-			"time": 1155,
+			"time": 1343,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -201,7 +201,7 @@
 				}
 			},
 			"times": [
-				1155
+				1343
 			],
 			"allTests": [
 				{
@@ -213,7 +213,7 @@
 			"id": "3d85b0cf-8086-4e99-8e37-878caef52ff2",
 			"name": "delete-actors",
 			"url": "http://127.0.0.1:5000/actors/1",
-			"time": 1148,
+			"time": 1321,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -228,7 +228,7 @@
 				}
 			},
 			"times": [
-				1148
+				1321
 			],
 			"allTests": [
 				{
@@ -240,7 +240,7 @@
 			"id": "a9d64212-a232-449d-8786-6b4775d78ae1",
 			"name": "delete-movies",
 			"url": "http://127.0.0.1:5000/movies/1",
-			"time": 1158,
+			"time": 1339,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -255,7 +255,7 @@
 				}
 			},
 			"times": [
-				1158
+				1339
 			],
 			"allTests": [
 				{
@@ -267,7 +267,7 @@
 			"id": "732464b7-6654-46c2-a092-055fab6773dc",
 			"name": "post-movies",
 			"url": "http://127.0.0.1:5000/movies",
-			"time": 1151,
+			"time": 1319,
 			"responseCode": {
 				"code": 401,
 				"name": "UNAUTHORIZED"
@@ -282,7 +282,7 @@
 				}
 			},
 			"times": [
-				1151
+				1319
 			],
 			"allTests": [
 				{
@@ -294,7 +294,7 @@
 			"id": "8cb5b279-cd25-4fe8-8096-baf1dd2db606",
 			"name": "post-actors",
 			"url": "http://127.0.0.1:5000/actors",
-			"time": 1158,
+			"time": 1496,
 			"responseCode": {
 				"code": 201,
 				"name": "CREATED"
@@ -309,7 +309,7 @@
 				}
 			},
 			"times": [
-				1158
+				1496
 			],
 			"allTests": [
 				{
@@ -321,7 +321,7 @@
 			"id": "0b366468-a77d-44de-a82c-a077fbcbdc07",
 			"name": "get-actors",
 			"url": "http://127.0.0.1:5000/actors",
-			"time": 1141,
+			"time": 1948,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -341,7 +341,7 @@
 				}
 			},
 			"times": [
-				1141
+				1948
 			],
 			"allTests": [
 				{
@@ -354,7 +354,7 @@
 			"id": "534347b2-9ae3-47f9-9a56-d9eb2195c458",
 			"name": "get-movies",
 			"url": "http://127.0.0.1:5000/movies",
-			"time": 1140,
+			"time": 1641,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -374,7 +374,7 @@
 				}
 			},
 			"times": [
-				1140
+				1641
 			],
 			"allTests": [
 				{
@@ -387,7 +387,7 @@
 			"id": "3522864e-b771-4f6a-934d-b1a623b7273d",
 			"name": "patch-actors",
 			"url": "http://127.0.0.1:5000/actors/2",
-			"time": 1189,
+			"time": 1428,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -402,7 +402,7 @@
 				}
 			},
 			"times": [
-				1189
+				1428
 			],
 			"allTests": [
 				{
@@ -414,7 +414,7 @@
 			"id": "19c1e125-fc00-4348-9f0f-0baaf9075700",
 			"name": "patch-movies",
 			"url": "http://127.0.0.1:5000/movies/2",
-			"time": 1156,
+			"time": 1364,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -429,7 +429,7 @@
 				}
 			},
 			"times": [
-				1156
+				1364
 			],
 			"allTests": [
 				{
@@ -441,7 +441,7 @@
 			"id": "79158d4a-acbf-4311-bef5-d9295c2349c5",
 			"name": "delete-actors",
 			"url": "http://127.0.0.1:5000/actors/2",
-			"time": 1187,
+			"time": 1347,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -456,7 +456,7 @@
 				}
 			},
 			"times": [
-				1187
+				1347
 			],
 			"allTests": [
 				{
@@ -468,7 +468,7 @@
 			"id": "db9be5b9-9f33-411c-9c65-b67dd7f0763d",
 			"name": "delete-movies",
 			"url": "http://127.0.0.1:5000/movies/2",
-			"time": 1171,
+			"time": 1319,
 			"responseCode": {
 				"code": 401,
 				"name": "UNAUTHORIZED"
@@ -483,7 +483,7 @@
 				}
 			},
 			"times": [
-				1171
+				1319
 			],
 			"allTests": [
 				{
@@ -495,7 +495,7 @@
 			"id": "544cb7f9-ebf3-4873-ac53-2ab4489f6080",
 			"name": "post-movies",
 			"url": "http://127.0.0.1:5000/movies",
-			"time": 1164,
+			"time": 1330,
 			"responseCode": {
 				"code": 401,
 				"name": "UNAUTHORIZED"
@@ -510,7 +510,7 @@
 				}
 			},
 			"times": [
-				1164
+				1330
 			],
 			"allTests": [
 				{
@@ -522,7 +522,7 @@
 			"id": "9b1f1ce2-a026-4d51-ad22-5626382799f2",
 			"name": "post-actors",
 			"url": "http://127.0.0.1:5000/actors",
-			"time": 1241,
+			"time": 1324,
 			"responseCode": {
 				"code": 401,
 				"name": "UNAUTHORIZED"
@@ -537,7 +537,7 @@
 				}
 			},
 			"times": [
-				1241
+				1324
 			],
 			"allTests": [
 				{
@@ -549,7 +549,7 @@
 			"id": "9e7b0aec-0163-4c78-b6ae-5ab776aa76c2",
 			"name": "get-actors",
 			"url": "http://127.0.0.1:5000/actors",
-			"time": 1163,
+			"time": 1314,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -569,7 +569,7 @@
 				}
 			},
 			"times": [
-				1163
+				1314
 			],
 			"allTests": [
 				{
@@ -582,7 +582,7 @@
 			"id": "7eaddde5-8ab7-4fef-a4ca-d1639c65a2c5",
 			"name": "get-movies",
 			"url": "http://127.0.0.1:5000/movies",
-			"time": 1159,
+			"time": 1354,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -602,7 +602,7 @@
 				}
 			},
 			"times": [
-				1159
+				1354
 			],
 			"allTests": [
 				{
@@ -615,7 +615,7 @@
 			"id": "b529518f-602c-4f8d-9732-757acc3d7a9b",
 			"name": "patch-actors",
 			"url": "http://127.0.0.1:5000/actors/1",
-			"time": 1156,
+			"time": 1317,
 			"responseCode": {
 				"code": 401,
 				"name": "UNAUTHORIZED"
@@ -630,7 +630,7 @@
 				}
 			},
 			"times": [
-				1156
+				1317
 			],
 			"allTests": [
 				{
@@ -642,7 +642,7 @@
 			"id": "d82a10ee-1baf-4090-a866-68aeaa7bb4b6",
 			"name": "patch-movies",
 			"url": "http://127.0.0.1:5000/movies/1",
-			"time": 1156,
+			"time": 1333,
 			"responseCode": {
 				"code": 401,
 				"name": "UNAUTHORIZED"
@@ -657,7 +657,7 @@
 				}
 			},
 			"times": [
-				1156
+				1333
 			],
 			"allTests": [
 				{
@@ -669,7 +669,7 @@
 			"id": "da639914-de1f-4516-9af6-a8ecbd135c4c",
 			"name": "delete-actors",
 			"url": "http://127.0.0.1:5000/actors/1",
-			"time": 1134,
+			"time": 1318,
 			"responseCode": {
 				"code": 401,
 				"name": "UNAUTHORIZED"
@@ -684,7 +684,7 @@
 				}
 			},
 			"times": [
-				1134
+				1318
 			],
 			"allTests": [
 				{
@@ -696,7 +696,7 @@
 			"id": "938eef7a-ecfb-4783-ad0f-8370e4d56d87",
 			"name": "delete-movies",
 			"url": "http://127.0.0.1:5000/movies/1",
-			"time": 1153,
+			"time": 1323,
 			"responseCode": {
 				"code": 401,
 				"name": "UNAUTHORIZED"
@@ -711,7 +711,7 @@
 				}
 			},
 			"times": [
-				1153
+				1323
 			],
 			"allTests": [
 				{
@@ -721,7 +721,7 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 29164,
+	"totalTime": 34586,
 	"collection": {
 		"requests": [
 			{

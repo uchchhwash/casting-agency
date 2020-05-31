@@ -1,0 +1,1064 @@
+{
+	"info": {
+		"_postman_id": "5eb92a9d-91be-4906-9416-3af6dd2deb1f",
+		"name": "casting-agency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "executive-producer",
+			"item": [
+				{
+					"name": "post-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "17a4d2cb-8cc0-40cf-929a-dcde4e73ef00",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Terminator 25\",\r\n\t\"desc\": \"Full Action Movie\",\r\n\t\"release_date\" : \"2020-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post-2nd movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5992778a-c9b8-45d3-8bb1-c1098fdd8bf4",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Big Bang Thoery\",\r\n\t\"desc\": \"Full Comedy Movie\",\r\n\t\"release_date\" : \"2020-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "46855f79-f582-4afd-a70e-7200195d842a",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"John Baker\",\r\n\t\"bio\": \"Awesome Bio\",\r\n\t\"age\": 25,\r\n\t\"gender\": \"MALE\",\r\n\t\"movie\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b417e33f-f5fb-43d2-84bb-72d46494f592",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains actors array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.actors).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "db438d52-1841-4546-82b0-a3a9f6a91f58",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains movies array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.movies).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "813505bd-94bd-4d94-9cc4-1c0625fa42bb",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Baker Bhai\",\r\n\t\"bio\": \"Extra Oridinary Bio\",\r\n\t\"age\": 30,\r\n\t\"gender\": \"MALE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/actors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "74e80e92-2704-4bb2-8943-c1794ef8191f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Transformers\",\r\n\t\"desc\": \"Full thriller movie\",\r\n\t\"release_date\" : \"2020-11-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "54e2e0f1-4ff8-4896-93cd-4c711dcff59e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/actors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a2116bf7-d947-43a0-a312-cfabb9dcc09f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjdJVzdaUEZLWXBpdS1qZjAzOTJibiJ9.eyJpc3MiOiJodHRwczovL3VjaC1kZXYuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZDI4MzIyYmViNjg0MGM5Mzk1Mzk2YSIsImF1ZCI6ImNhc3RpbmctYWdlbmN5IiwiaWF0IjoxNTkwODU1OTU3LCJleHAiOjE1OTA5NDIzNDgsImF6cCI6IjRoZjRONExJc1RlVUpEYWg5akZ6c2QyY0pwaU1nbk9LIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsImdldDphY3RvcnMiLCJnZXQ6bW92aWVzIiwicGF0Y2g6YWN0b3JzIiwicGF0Y2g6bW92aWVzIiwicG9zdDphY3RvcnMiLCJwb3N0Om1vdmllcyJdfQ.IdBJWEN7FO56vfY3TR4sPajRj6UrzwzQUE1EthIqkRfOqAPoQ_HlcB0SFl7S_quviDv20IH5T9gqQrsydu7Uy3QG28GDa3zzqkTWYnTTDPXAb3XZTg9UOx7IL-x9_1Q7VpiKXLUs4iEDxPbXXnaIzNq3alesRhPkrTe_qjJzrusFLKxIAnzQnnLhQllPHYFIQwq0--lBIPMWv--Gnqxms2_e2mdl1eewp7sX3RzD68q4QXrxTHl7Sm18p9WNNRdezAAGTbf-VtjoI-t1-jfIw2R5hROQtPyI9_2CO4K61YJkne1eqBCNDhy2j_pJA0UO6srGeDZ36ZR0IbtHZHQKcA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f4b6a863-2400-4c00-a7b7-0657c08c05c9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "36c44991-78e5-4809-8544-b7ad2c51ede8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "casting-director",
+			"item": [
+				{
+					"name": "post-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3c8f888-713c-4c44-8d09-12f635cd5a5c",
+								"exec": [
+									"pm.test(\"401 UNAUTHORIZED\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Terminator 25\",\r\n\t\"desc\": \"Full Action Movie\",\r\n\t\"release_date\" : \"2020-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e99753bc-bfa0-458e-91e5-f9ac2fed37ed",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"John Baker\",\r\n\t\"bio\": \"Awesome Bio\",\r\n\t\"age\": 25,\r\n\t\"gender\": \"MALE\",\r\n\t\"movie\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3641363-101c-4074-b2e9-bb9a978c3aa9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains actors array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.actors).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "436495c5-26fb-45f3-b14f-4a5917720a3f",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains movies array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.movies).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f79702e2-3ce7-4b6d-b08c-c3c4f5bc475c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Baker Bhai\",\r\n\t\"bio\": \"Extra Oridinary Bio\",\r\n\t\"age\": 30,\r\n\t\"gender\": \"MALE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/actors/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a196ccea-e935-4ab0-8733-a65ef59f4eff",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Sherlock\",\r\n\t\"desc\": \"Full thriller movie\",\r\n\t\"release_date\" : \"2020-11-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7dd33692-83a9-4d28-b040-2b7052b5abda",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/actors/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cc44b9a4-9dba-4e3c-a9ab-c5f48a1f76d1",
+								"exec": [
+									"pm.test(\"401 UNAUTHORIZED\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjdJVzdaUEZLWXBpdS1qZjAzOTJibiJ9.eyJpc3MiOiJodHRwczovL3VjaC1kZXYuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZDI4MzhkZjBiOGU2MGM4ZTg1YzhmYSIsImF1ZCI6ImNhc3RpbmctYWdlbmN5IiwiaWF0IjoxNTkwODg1NDI1LCJleHAiOjE1OTA5NzE4MTYsImF6cCI6IjRoZjRONExJc1RlVUpEYWg5akZ6c2QyY0pwaU1nbk9LIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6YWN0b3JzIiwiZ2V0OmFjdG9ycyIsImdldDptb3ZpZXMiLCJwYXRjaDphY3RvcnMiLCJwYXRjaDptb3ZpZXMiLCJwb3N0OmFjdG9ycyJdfQ.X9TRMJRr81vd--eqeWm6kmIYLnntU6L79HOyeVoXMHG4wBLweWj8sRIPkb00N8BcCnMiWcSnbi0GekP3T51EiKjotd_GP8TyiLKdTABHdOBS0pvX9LtSRZe6_RyHOIdhH-hwh_NCfGoKuGxlYVBsP8jTDF6TVE17BXOFB7GN-vK7j0oGjcsEN6id8bjfxZ2m8Obq9QGX32M4g2oWZuaus8gY7p3Q8ZeFjm6DivoaT9TsUf8SISN7OzW-G7cf4KH3shHUQGgSUHVZlA0TqmR_oMrcOzK9jiaCOyzCHHaMw7dLHCWKD45UXRLd6F45xzgOnxYQAmTC1j3Bh6SAaCmNAg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "124a752f-4ac0-49d3-b8bf-359b382f27d4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1e0e636d-ab99-4a4d-8055-46d34a5f1516",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "casting-assistant",
+			"item": [
+				{
+					"name": "post-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "95424552-5dca-4e45-8460-4fd83d7d69ce",
+								"exec": [
+									"pm.test(\"401 UNAUTHORIZED\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Terminator 25\",\r\n\t\"desc\": \"Full Action Movie\",\r\n\t\"release_date\" : \"2020-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1fbc636c-6217-4f9c-a2cc-d6042f9e0f9e",
+								"exec": [
+									"pm.test(\"401 UNAUTHORIZED\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"John Baker\",\r\n\t\"bio\": \"Awesome Bio\",\r\n\t\"age\": 25,\r\n\t\"gender\": \"MALE\",\r\n\t\"movie\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "940616f2-75af-45f3-88e3-4d362f54c682",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains actors array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.actors).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/actors",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e1db8fd1-3e7b-4d85-84c1-20e7b9692cc2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"value contains movies array\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.movies).to.be.an('array')\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1fcda66f-7a2d-4bcb-848d-0a7c3b0fc995",
+								"exec": [
+									"pm.test(\"401 UNAUTHORIZED\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Baker Bhai\",\r\n\t\"bio\": \"Extra Oridinary Bio\",\r\n\t\"age\": 30,\r\n\t\"gender\": \"MALE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/actors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "627ea225-627d-4a66-aa60-a3a4307dac94",
+								"exec": [
+									"pm.test(\"401 UNAUTHORIZED\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"Transformers\",\r\n\t\"desc\": \"Full thriller movie\",\r\n\t\"release_date\" : \"2020-11-11\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/movies/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-actors",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e10f1e6b-ae0d-4e02-8a95-93b1f5288031",
+								"exec": [
+									"pm.test(\"401 UNAUTHORIZED\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/actors/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-movies",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b2d190a5-622d-4045-a807-0f1a4ae68c42",
+								"exec": [
+									"pm.test(\"401 UNAUTHORIZED\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/movies/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjdJVzdaUEZLWXBpdS1qZjAzOTJibiJ9.eyJpc3MiOiJodHRwczovL3VjaC1kZXYuYXV0aDAuY29tLyIsInN1YiI6ImF1dGgwfDVlZDI4MzZkMzc0MmVmMGM4N2Y4MmFhZiIsImF1ZCI6ImNhc3RpbmctYWdlbmN5IiwiaWF0IjoxNTkwODg1NDg1LCJleHAiOjE1OTA5NzE4NzYsImF6cCI6IjRoZjRONExJc1RlVUpEYWg5akZ6c2QyY0pwaU1nbk9LIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6YWN0b3JzIiwiZ2V0Om1vdmllcyJdfQ.yxFihYxD1sh2K0ZJYh9YpL5do-XrTJ8d1OB8Z-U-swWVfzQeKSG0IXkoCq4oT6-OMMmxktEAVn64IGqP2yHQuvoPCAOJYCcjQEjit5N09YHjC44JEjvsC5E9tHVPaAALtiZh_C4Alo7pmqDoIwFLy1E_7VOAg_grrAYokX-i5g7hobrKpCEjGsV7A0yJ3T3hTrEp7mC5KqLc9PwbsYambNCfze77FKLBgr6POkCj6g9X0JQimz9b12JJDFcH1kqv1EIrsKEhGoD4KgZLNYo9XYyIEuow-h3U4lRMchGfvZ-H978gHEBL1aKBPqDIW0VWE7XEqGk83wCHthk7BhZbjA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bf00de5a-68c7-4958-b081-6dc32019ed89",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d1250735-bc1f-4f9e-b2a4-b736138be82f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,8 +1,8 @@
 import os
 import unittest
 import json
+from config import Config
 from flask_sqlalchemy import SQLAlchemy
-
 from app import app
 from app import db_drop_and_create_all
 
