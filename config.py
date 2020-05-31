@@ -13,4 +13,4 @@ class Test_Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
-DEVELOPMENT_MODE = os.environ.get('DEVELOPMENT_MODE')
+TEST_MODE = os.environ.get('TEST_MODE')

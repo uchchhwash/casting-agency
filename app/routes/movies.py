@@ -92,6 +92,7 @@ def delete_movies(payload, id):
         return jsonify({
             'message': 'Movie Successfully deleted.',
             'success': True,
+            'id':id
         }), 200
 
     except Exception:

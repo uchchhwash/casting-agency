@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 from flask import Flask, jsonify
-from config import Config, Test_Config, DEVELOPMENT_MODE
+from config import Config, Test_Config, TEST_MODE
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from .auth.auth import AuthError
@@ -9,7 +9,7 @@ from .auth.auth import AuthError
 app = Flask(__name__)
 
 #DEVELOPMENT MODE FALSE INTIALIZE PRODUCTION & TRUE INTIALIZE LOCAL DATABASE 
-if DEVELOPMENT_MODE.lower() == 'false':
+if TEST_MODE.lower() == 'false':
     app.config.from_object(Config)
     print("Production Database Activated")
 else :
@@ -32,7 +32,7 @@ from app.routes import index, actors, movies
 
 # Error Handling
 
-#db_drop_and_create_all()
+db_drop_and_create_all()
 
 @app.errorhandler(AuthError)
 def auth_error(error):
@@ -96,3 +96,11 @@ def invalid_claims(error):
         "message": error.__dict__
     }), 401
 
+
+@app.errorhandler(500)
+def internal_error(error):
+    return jsonify({
+        "success": False,
+        "error": 500,
+        "message": "Internal server error"
+    }), 500

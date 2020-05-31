@@ -80,10 +80,6 @@ def update_actor(payload, id):
 @requires_auth('delete:actors')
 def delete_actor(payload, id):
     try:
-        """Handles DELETE requests for actors.
-        returns:
-            - success message
-        """
         actor = Actor.query.filter_by(id=id).first()
         if not actor:
             return jsonify({'message': 'Actor not found.'})
@@ -91,6 +87,7 @@ def delete_actor(payload, id):
         return jsonify({
             'message': 'Actor Successfully deleted.',
             'success': True,
+            'id':id
         }), 200
 
     except Exception:
