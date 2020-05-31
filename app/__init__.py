@@ -32,7 +32,7 @@ from app.routes import index, actors, movies
 
 # Error Handling
 
-db_drop_and_create_all()
+# db_drop_and_create_all()
 
 @app.errorhandler(AuthError)
 def auth_error(error):
